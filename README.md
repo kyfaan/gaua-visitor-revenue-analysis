@@ -1,20 +1,27 @@
-# An Analysis of Repeat Visitor vs. Single Visitor Revenue Generation
+# An analysis of Repeat Visitor vs. Single Visitor Revenue Generation
 
-Working in web analytics, understanding complex user behavior plays a pivotal role in business success. Driven by the observation—*"As a user, I never make a purchase on my first visit; I wait for promotions or dynamic price drops"*—this project examines the question: **Do repeat visitors tend to generate higher revenue compared to single visitors?**
+Working in Web Analytics domain, I always deal with complex user behavior which plays a pivotal role in business success.
+
+To understand it, I have to make hypothesis, observation is my main weapon.
+
+One of the many observations is:
+"As a user I never make a purchase on my first visit, I would wait for promotion, or wait until the dynamic pricing drops lower. "
+
+t triggers my interest to research about:
+"Are users who are repeat visitors tend to make more revenue compared to single visitors?"
 
 ## Data
-* **Dataset:** Google Analytics Sample (BigQuery public dataset)
-* **Period:** August 2017
-* **Schema & Definitions:** Detailed in the [Data Dictionary](docs/data_dictionary.md)
+Dataset: Google Analytics Sample (BigQuery public dataset), Period: Agustus 2017.
+Schema details and columns definition: [data dictionary](data_dictionary.md)
 
-## Tools & Workflow
-* **SQL (BigQuery):** Data extraction, filtering, and aggregation
-* **Python (pandas, seaborn, scipy):** Exploratory Data Analysis (EDA) & statistical testing
+## Tools & workflow
+* SQL (BigQuery) Initial extraction & aggregation
+* Python (pandas, seaborn, scipy) EDA & Statistics test
 
 ## Key Findings
-* **Mean Revenue Distortion:** Initial mean calculations showed repeat visitors spending significantly more ($22.01 vs. $1.71). However, this figure was heavily skewed by a single outlier that accounted for 62% of the group's total revenue.
-* **Median Spend:** Evaluating the median inverted the trend, with single visitors showing higher median spending ($48.39) compared to repeat visitors ($36.40).
-* **Statistical Testing:** A Mann-Whitney U test yielded a p-value of `0.5333` (exceeding the standard `0.05` threshold). We fail to reject the null hypothesis, meaning there is no statistically significant difference in revenue generation between repeat and single visitors.
+* The initial mean of the data reflected on average, a repeat visitor spent significantly higher revenue ($22.01 vs. $1.71). However, this number is propelled by one outlier that contributed to 62% of the group's total revenue.
+* By analyzing its median, the result turned upside down where a single visitor on average spent $48.39 compared to just $36.40 for a single visitor.
+* A Mann-Whiteney U test is ran with the p-value result of 0.5333 (larger than the accepted 0.05) meaning fail to reject the null hypthesis (fail to reject repeat visitor = single visitor). In other words, from the median test above, we cannot confidently say that the test proof single visit spent more than repeat visitors.
 
-## Limitations
-* Small sample size restricted to an arbitrary 1-month evaluation window (August 2017).
+## Limitation
+* Low sample size, and arbitrary period (1 month)
